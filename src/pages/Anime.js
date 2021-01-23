@@ -3,7 +3,7 @@ import React from 'react';
 function Anime() {
   return (
     <div className='anime'>
-      <h1>Anime</h1>
+      <h1>ANIME</h1>
     </div>
   );
 }
