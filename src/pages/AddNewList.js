@@ -9,7 +9,8 @@ class AddNewList extends Component {
       description: '',
       images: '',
       filter: '',
-      rating:''
+      rating:'',
+      status:''
 		
 		}
 	}
@@ -46,15 +47,20 @@ class AddNewList extends Component {
 		})
   }
 
+	handleStatusChange = event => {
+		this.setState({
+			status: event.target.value
+		})
+  }
 
 
 	handleSubmit = event => {
-		alert(`${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}`)
+		alert(`${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status}    `)
 		event.preventDefault()
 	}
 
 	render() {
-		const { title, description, images, filter, rating } = this.state
+		const { title, description, images, filter, rating, status } = this.state
 		return (
 
       <div className="wrapper">
@@ -117,6 +123,20 @@ class AddNewList extends Component {
 					</select>
 				</div>			
 			
+
+        <div>
+					<label>Status</label>
+					<select value={filter} onChange={this.handleStatusChange}>
+						<option value="plan to watch">Plan to watch</option>
+						<option value="watching">Watching</option>
+						<option value="completed">Completed</option>
+
+					</select>
+				</div>
+
+
+
+
 				<button type="submit">Submit</button>
 			</form>
       
