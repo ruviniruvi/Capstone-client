@@ -1,10 +1,11 @@
 import React from 'react';
 import { GET_POSTS } from '../utils/Queries'
 import { useQuery } from '@apollo/client'
+import Listings from '../components/Listings'
 
 function Books() {
 
-  const { loading, error, data} = useQuery(GET_POSTS);
+  const { loading, error, data } = useQuery(GET_POSTS);
   let arr = []
   data.listings.map(list => {
     if(list.filter.name === "Books"){
@@ -15,6 +16,7 @@ function Books() {
 
   return (
     <div className='books'>
+      <Listings lists={arr}/>
     </div>
   );
 }

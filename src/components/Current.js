@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import Item from "./Item";
 
 export default function Current(props) {
   let current = props.current;
@@ -9,9 +10,7 @@ export default function Current(props) {
         <h1>Current</h1>
         <div className="display-list">
           {current.map((item) => (
-            <div className="listing" key={item.id}>
-              <img src={item.Image.name} height="400"></img>
-            </div>
+            <Item item={item} />
           ))}
         </div>
       </div>
@@ -20,9 +19,7 @@ export default function Current(props) {
     return (
       <div className="current-container">
         <h1>Current</h1>
-        <div key={current.id}>
-          <img src={current[0].Image.name} height="400"></img>
-        </div>
+        <Item item={current} />
       </div>
     );
   } else {

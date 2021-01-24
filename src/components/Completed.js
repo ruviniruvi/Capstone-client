@@ -1,4 +1,5 @@
 import React from "react";
+import Item from './Item'
 import "../App.css";
 
 export default function Completed(props) {
@@ -9,9 +10,7 @@ export default function Completed(props) {
         <h1>Completed</h1>
         <div className="display-list">
           {completed.map((item) => (
-            <div className="listing" key={item.id}>
-              <img src={item.Image.name} height="400"></img>
-            </div>
+            <Item item={item} />
           ))}
         </div>
       </div>
@@ -20,9 +19,7 @@ export default function Completed(props) {
     return (
       <div className="completed-container">
         <h1>Completed</h1>
-        <div key={completed.id}>
-          <img src={completed[0].Image.name} height="400"></img>
-        </div>
+        <Item item={completed} />
       </div>
     );
   } else {

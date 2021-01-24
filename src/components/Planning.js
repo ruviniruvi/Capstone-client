@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import Item from './Item'
 
 export default function Planning(props) {
   let planning = props.planning;
@@ -9,9 +10,7 @@ export default function Planning(props) {
         <h1>Planning</h1>
         <div className="display-list">
           {planning.map((item) => (
-            <div className="listing" key={item.id}>
-              <img src={item.Image.name} height="400"></img>
-            </div>
+            <Item item={item} />
           ))}
         </div>
       </div>
@@ -20,9 +19,7 @@ export default function Planning(props) {
     return (
       <div className="planning-container">
         <h1>Planning</h1>
-        <div key={planning.id}>
-          <img src={planning[0].Image.name} height="400"></img>
-        </div>
+        <Item item={planning} />
       </div>
     );
   } else {
