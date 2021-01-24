@@ -1,4 +1,7 @@
-import React , { Component} from 'react';
+import React , { Component , useState} from 'react';
+
+//import 'react-datepicker/dist/react-datepicker.css'
+//import DatePicker from 'react-datepicker'
 import "./AddNewList.css";
 class AddNewList extends Component {
 	constructor(props) {
@@ -10,7 +13,9 @@ class AddNewList extends Component {
       images: '',
       filter: '',
       rating:'',
-      status:''
+      status:'',
+      started_date:'',
+      ended_date:''
 		
 		}
 	}
@@ -53,18 +58,36 @@ class AddNewList extends Component {
 		})
   }
 
+	handleStartedDateChange = event => {
+		this.setState({
+      started_date: event.target.value,
+     
+		})
+  }
+
+	handleEndedDateChange = event => {
+		this.setState({
+      
+      ended_date: event.target.value
+		})
+  }
+
+
 
 	handleSubmit = event => {
-		alert(`${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status}    `)
+		alert(`${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status} ${this.state.started_date} ${this.state.ended_date}  `)
 		event.preventDefault()
 	}
 
 	render() {
-		const { title, description, images, filter, rating, status } = this.state
+    const { title, description, images, filter, rating, status,started_date, ended_date } = this.state;
+    //const [selectedDate, setSelectedDate] = useState(null);
+
 		return (
 
       <div className="wrapper">
       <div className="form-wrapper">
+      <div className='form-container'>
 
       <h1>Add New Favorite Anime , Book , Game or Movie To Your List!</h1>
 
@@ -126,7 +149,7 @@ class AddNewList extends Component {
 
         <div>
 					<label>Status</label>
-					<select value={filter} onChange={this.handleStatusChange}>
+					<select value={status} onChange={this.handleStatusChange}>
 						<option value="plan to watch">Plan to watch</option>
 						<option value="watching">Watching</option>
 						<option value="completed">Completed</option>
@@ -134,12 +157,32 @@ class AddNewList extends Component {
 					</select>
 				</div>
 
+     
+      <div>
+					<label>Started Date </label>
+					<input
+						type="date"
+						value={started_date}
+						onChange={this.handleStartedDateChange}
+					/>
+				</div>
+
+        <div>
+					<label>Ended Date </label>
+					<input
+						type="date"
+						value={ended_date}
+						onChange={this.handleEndedDateChange}
+					/>
+				</div>
+   
 
 
-
-				<button type="submit">Submit</button>
+<input type="submit" value="Submit"/>
+        
 			</form>
       
+      </div>
       </div>
       </div>
     )
