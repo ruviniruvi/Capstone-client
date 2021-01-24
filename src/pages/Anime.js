@@ -13,10 +13,9 @@ function Anime() {
   })
   console.log(arr)
 
-
   return (
     <div className='anime'>
-      <h1>ANIME</h1>
+      <Listings lists={arr}/>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function Planning(props) {
         <h1>Planning</h1>
         <div className="display-list">
           {planning.map((item) => (
-            <div key={item.id}>
+            <div className="listing" key={item.id}>
               <img src={item.Image.name} height="400"></img>
             </div>
           ))}
@@ -18,11 +18,14 @@ export default function Planning(props) {
     );
   } else if (planning.length === 1) {
     return (
-      <div key={planning.id}>
-        <img src={planning.Image.name} width="300"></img>
+      <div className="planning-container">
+        <h1>Planning</h1>
+        <div key={planning.id}>
+          <img src={planning[0].Image.name} height="400"></img>
+        </div>
       </div>
     );
   } else {
-    return <div>NOTHING CURRENTLY</div>;
+    return <div>NOTHING PLANNING</div>;
   }
 }

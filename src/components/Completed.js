@@ -9,7 +9,7 @@ export default function Completed(props) {
         <h1>Completed</h1>
         <div className="display-list">
           {completed.map((item) => (
-            <div key={item.id}>
+            <div className="listing" key={item.id}>
               <img src={item.Image.name} height="400"></img>
             </div>
           ))}
@@ -21,11 +21,11 @@ export default function Completed(props) {
       <div className="completed-container">
         <h1>Completed</h1>
         <div key={completed.id}>
-          <img src={completed[0].Image.name} width="300"></img>
+          <img src={completed[0].Image.name} height="400"></img>
         </div>
       </div>
     );
   } else {
-    return <div>NOTHING CURRENTLY</div>;
+    return <div>NOTHING COMPLETED</div>;
   }
 }
