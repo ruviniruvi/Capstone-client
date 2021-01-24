@@ -1,6 +1,7 @@
 import React from 'react';
 import { GET_POSTS } from '../utils/Queries'
 import { useQuery } from '@apollo/client'
+import Listings from '../components/Listings'
 
 function Books() {
 
@@ -15,7 +16,7 @@ function Books() {
 
   return (
     <div className='books'>
-      <h1>BOOKS</h1>
+      <Listings lists={arr}/>
     </div>
   );
 }
