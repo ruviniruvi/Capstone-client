@@ -14,6 +14,11 @@ export const GET_POSTS = gql`
       tags {
         Tags
       }
+      Image{
+        name
+        url
+      }
+      Status
     }
   }
 `;
