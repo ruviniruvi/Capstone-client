@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import { GET_POSTS } from "../utils/Queries";
 
 function Home() {
     const { loading, error, data } = useQuery(GET_POSTS);
@@ -13,21 +14,3 @@ function Home() {
 }
 
 export default Home;
-
-const GET_POSTS = gql`
-  {
-    listings {
-      id
-      Title
-      Notes
-      Started_At
-      Finished_At
-      filter {
-        filter_Name
-      }
-      tags {
-        Tags
-      }
-    }
-  }
-`;
