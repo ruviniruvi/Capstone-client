@@ -8,13 +8,45 @@ import Books from './pages/Books';
 import Games from './pages/Games';
 import Movies from './pages/Movies';
 import AddNewList from './pages/AddNewList';
-
-
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
 import './App.css';
+
+const errorLink = onError(({ graphqlErrors, networkError }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert(`Graphql error ${message}`);
+    });
+  }
+});
+
+const link = from([
+  errorLink,
+  new HttpLink({ uri: "https://capstone-ttp1.herokuapp.com/graphql" }),
+]);
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: link,
+});
+
+
+
+
+
 
 function App() {
   return (
-    <>
+    
+    <ApolloProvider client={client}>
+       {" "}
+
       <Router>
         <Navbar />
         <Switch>
@@ -29,7 +61,7 @@ function App() {
 
         </Switch>
       </Router>
-    </>
+      </ApolloProvider>
   );
 }
 

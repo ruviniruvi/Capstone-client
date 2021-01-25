@@ -1,4 +1,6 @@
 import React , { Component , useState} from 'react';
+import { CREATE_LIST_MUTATION } from "../graphQL/mutations";
+import { useMutation } from "@apollo/client";
 
 //import 'react-datepicker/dist/react-datepicker.css'
 //import DatePicker from 'react-datepicker'
@@ -11,14 +13,52 @@ class AddNewList extends Component {
       title: '',
       description: '',
       images: '',
-      filter: '',
-      rating:'',
-      status:'',
+      filter: 'anime',
+      rating:'1',
+      status:'planning',
       started_date:'',
       ended_date:''
 		
 		}
+		this.handleTitleChange = this.handleTitleChange.bind(this);
+		this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+		this.handleFilterChange = this.handleFilterChange.bind(this);
+		this.handleRatingChange = this.handleRatingChange.bind(this);
+		this.handleStatusChange = this.handleStatusChange.bind(this);
+		this.handleStartedDateChange = this.handleStartedDateChange.bind(this);
+		this.handleEndedDateChange = this.handleEndedDateChange.bind(this);
+
+		this.handleSubmit = this.handleSubmit.bind(this);
+
+
 	}
+
+/*
+
+  const [createList, { error }] = useMutation(CREATE_LIST_MUTATION);
+
+  const addList = () => {
+    createList({
+      variables: {
+         title: title,
+      description: discription,
+      images: images,
+      filter: filter,
+      rating:ratings,
+      status:status,
+      started_date:started_date,
+      ended_date:ended_date
+		
+      },
+    });
+
+    if (error) {
+      console.log(error);
+    }
+  };
+
+
+*/
 
 	handleTitleChange = event => {
 		this.setState({
@@ -80,7 +120,7 @@ class AddNewList extends Component {
 	}
 
 	render() {
-    const { title, description, images, filter, rating, status,started_date, ended_date } = this.state;
+    //const { title, description, images, filter, rating, status,started_date, ended_date } = this.state;
     //const [selectedDate, setSelectedDate] = useState(null);
 
 		return (
@@ -96,7 +136,7 @@ class AddNewList extends Component {
 					<label>Title </label>
 					<input
 						type="text"
-						value={title}
+						value={this.state.value}
 						onChange={this.handleTitleChange}
 					/>
 				</div>
@@ -104,7 +144,7 @@ class AddNewList extends Component {
 					<label>Description </label>
 					<input
 						type="text"
-						value={description}
+						value={this.state.value}
 						onChange={this.handleDescriptionChange}
 					/>
 				</div>
@@ -113,14 +153,14 @@ class AddNewList extends Component {
 					<label>Image </label>
 					<input
 						type="text"
-						value={images}
+						value={this.state.value}
 						onChange={this.handleImageChange}
 					/>
 				</div>
 
         <div>
 					<label>Filter</label>
-					<select value={filter} onChange={this.handleFilterChange}>
+					<select value={this.state.value} onChange={this.handleFilterChange}>
 						<option value="anime">Anime</option>
 						<option value="books">Books</option>
 						<option value="games">Games</option>
@@ -131,7 +171,7 @@ class AddNewList extends Component {
 
         <div>
 					<label>Rating</label>
-					<select value={rating} onChange={this.handleRatingChange}>
+					<select value={this.state.value} onChange={this.handleRatingChange}>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -149,9 +189,9 @@ class AddNewList extends Component {
 
         <div>
 					<label>Status</label>
-					<select value={status} onChange={this.handleStatusChange}>
-						<option value="plan to watch">Plan to watch</option>
-						<option value="watching">Watching</option>
+					<select value={this.state.value} onChange={this.handleStatusChange}>
+						<option value="planning">Planning</option>
+						<option value="currently">Currently</option>
 						<option value="completed">Completed</option>
 
 					</select>
@@ -162,7 +202,7 @@ class AddNewList extends Component {
 					<label>Started Date </label>
 					<input
 						type="date"
-						value={started_date}
+						value={this.state.value}
 						onChange={this.handleStartedDateChange}
 					/>
 				</div>
@@ -171,7 +211,7 @@ class AddNewList extends Component {
 					<label>Ended Date </label>
 					<input
 						type="date"
-						value={ended_date}
+						value={this.state.value}
 						onChange={this.handleEndedDateChange}
 					/>
 				</div>
