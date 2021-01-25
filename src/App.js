@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-//import logo from './logo.svg';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -39,24 +37,19 @@ const client = new ApolloClient({
 
 
 
-=======
-import React from "react";
->>>>>>> 81ded185dd3425955cb44292775379ced8aec423
+/*import React from "react";
+
 
 //server imports
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import client from './utils/ApolloClient'
 
-<<<<<<< HEAD
 
-function App() {
-  return (
-    
-    <ApolloProvider client={client}>
-       {" "}
 
-=======
+
+
+
 //components
 import Navbar from "./components/Navbar";
 import AddNewList from "./pages/AddNewList";
@@ -68,13 +61,13 @@ import Books from "./pages/Books";
 import Games from "./pages/Games";
 import Movies from "./pages/Movies";
 
-import "./App.css";
+import "./App.css";*/
 
 function App() {
   return (
     <>
     <ApolloProvider client={client}>
->>>>>>> 81ded185dd3425955cb44292775379ced8aec423
+
       <Router>
           {/* <FetchData /> */}
           <Navbar />
@@ -88,10 +81,10 @@ function App() {
           </Switch>
       </Router>
       </ApolloProvider>
-<<<<<<< HEAD
-=======
+
+
     </>
->>>>>>> 81ded185dd3425955cb44292775379ced8aec423
+
   );
 }
 
