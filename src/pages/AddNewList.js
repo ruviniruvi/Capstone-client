@@ -1,3 +1,4 @@
+
 import React , { Component , useState} from 'react';
 import { CREATE_LIST_MUTATION } from "../graphQL/mutations";
 import { useMutation } from "@apollo/client";
@@ -92,15 +93,63 @@ class AddNewList extends Component {
 		})
   }
 
-	handleStatusChange = event => {
-		this.setState({
-			status: event.target.value
-		})
+}
+class AddNewList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: "",
+      description: "",
+      images: "",
+      filter: "",
+      rating: "",
+      status: "",
+      started_date: "",
+      ended_date: "",
+    };
   }
 
-	handleStartedDateChange = event => {
-		this.setState({
+  handleTitleChange = (event) => {
+    this.setState({
+      title: event.target.value,
+    });
+  };
+
+  handleDescriptionChange = (event) => {
+    this.setState({
+      description: event.target.value,
+    });
+  };
+
+  handleImageChange = (event) => {
+    this.setState({
+      images: event.target.value,
+    });
+  };
+
+  handleFilterChange = (event) => {
+    this.setState({
+      filter: event.target.value,
+    });
+  };
+
+  handleRatingChange = (event) => {
+    this.setState({
+      rating: event.target.value,
+    });
+  };
+
+  handleStatusChange = (event) => {
+    this.setState({
+      status: event.target.value,
+    });
+  };
+
+  handleStartedDateChange = (event) => {
+    this.setState({
       started_date: event.target.value,
+
      
 		})
   }
@@ -121,11 +170,12 @@ class AddNewList extends Component {
 
 	render() {
     //const { title, description, images, filter, rating, status,started_date, ended_date } = this.state;
+
     //const [selectedDate, setSelectedDate] = useState(null);
 
-		return (
-
+    return (
       <div className="wrapper">
+
       <div className="form-wrapper">
       <div className='form-container'>
 
@@ -224,17 +274,10 @@ class AddNewList extends Component {
       
       </div>
       </div>
+
       </div>
-    )
-	}
+    );
+  }
 }
-
-
-
-
-
-
-
-
 
 export default AddNewList;
