@@ -5,15 +5,12 @@ import { useQuery } from '@apollo/client'
 function Home() {
   const { loading, error, data } = useQuery(GET_POSTS);
   return (
-    <div className="home">
-      
-      <img src="black.jpg" alt="bankimage" className="logo" />
-    </div>
-    
+	<div className="App">
+   </div>
     
   );
 }
-
+ 
 const tabItems = document.querySelectorAll('.tab-item');
 const tabContentItems = document.querySelectorAll('.tab-content-item');
 

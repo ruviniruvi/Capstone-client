@@ -50,7 +50,7 @@ function App() {
     <><div className="App">
      
 
-     <h1>Welcome to Our Girumi App</h1>
+     <h1>Welcome to Girumi App</h1>
 
    
     </div>
