@@ -2,12 +2,39 @@ import React from "react";
 import { GET_POSTS } from '../utils/Queries'
 import { useQuery } from '@apollo/client'
 
+
 function Home() {
   const { loading, error, data } = useQuery(GET_POSTS);
   return (
-	<div className="App">
-		
-   </div>
+	<div className="App"> 
+
+<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> </link>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.1/css/font-awesome.min.css"></link>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<div id="slider" class="carousel slide carousel-fade" data-ride="carousel"></div>
+  <div class="carousel-inner"></div>
+    <div class="carousel-item active"></div>
+      <img src="imagine1.jpg" class="d-block w-100" height="750" width="2050px" ></img>
+    
+
+    <div class="carousel-item"></div>
+      <img src="imagine2.jpg" class="d-block w-100" height="750" width="2050px"></img>
+    
+    <div class="carousel-item"></div>
+      <img src="imagine3.jpg" class="d-block w-100"  height="750" width="2050px"></img>
+    
+    <div class="carousel-item">  </div>
+      <img src="imagine4.jpg" class="d-block w-100" height="750" width="2050px"></img>
+  
+
+
+</div>
+
     
   );
 }

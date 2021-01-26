@@ -1,0 +1,312 @@
+*
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    text-align: left;
+    background-color: black;
+}
+
+
+.h1, h1 {
+	font-size: 2.5rem;
+	background-color: black;
+	color: white;
+
+}
+
+.menu-bar 
+{
+  margin-bottom: -5px;
+  width: 20%;
+  height: -380px;
+  float: right;
+}
+
+.menu-bar ul
+{
+	display:inline-flex;
+	float: righ;
+}
+
+.menu-bar ul li
+{
+
+	border-left: 1px solid black;
+	list-style-type: none;
+	padding: 25px 35px;
+	text-align: center;
+	background-color: purple;
+	cursor: pointer;
+
+}
+
+
+.menu-bar ul li a
+{
+	font-size: 16px;
+	font-weight: bold;
+	color:black;
+	text-decoration: none;
+}
+
+.fa-shopping-basket
+{
+	margin-right: 5px;
+}
+
+@media only screen and (max-width: 980px)
+{
+     .top-nav-bar
+     {
+     	height: 118px;
+     	border-bottom: 0;
+     }
+
+     .search-box
+     {
+     	width: 100%;
+     }
+
+     .menu-bar
+     {
+
+     	width: 100%
+     }
+
+     .menu-bar ul
+     {
+
+     	margin: 10px 0;
+     	width: 100%;
+     }
+
+     .menu-bar ul li
+     {
+
+     height: 23px;
+     width: 100%;
+     }
+
+}
+
+.side-menu ul li:hover ul
+{
+	display: block;
+	height: 400px;
+	margin-left: 5.5%;
+	padding: 0 100px 10px 10px;
+	position: fixed;
+	background: black;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+	background-color: black;
+
+}
+
+.fa-angle-righ
+{
+	margin-top:4px;
+	margin-right:8px;
+	float: right;
+}
+
+
+
+
+
+/*-----slider css ----*/
+
+.slider
+{
+	width: 68%;
+	margin-left: 12%;
+	padding: 0  -100px;
+}
+
+
+.caraousel-indicators
+{
+z-index: 1 !important;
+}
+
+@media only screen and(max-width: 980px)
+{
+	.slider
+	{
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+/*----feautre categories**/
+
+.featured-categories
+{
+	margin: 50px 0;
+	background-color: black;
+}
+
+.featured-categories img
+{
+	width: 100%;
+	padding: 20px 0;
+	transition: 1s;
+	cursor: pointer;
+}
+
+.featured-categories img:hover
+{
+	transform: scale(1.1);
+}
+
+/* On sale product*/
+
+.title-box
+{
+
+	color:black;
+	width: 180px;
+	padding: 4px 10px;
+	height: 40px;
+	margin-bottom: 30px;
+	display: flex;
+	background-color: black;
+}
+
+.title-box h2
+{
+	font-size: 24px;
+}
+
+.title-box::after
+{
+	content: '';
+	border-top: 40px solid purple;
+	border-right: 50px solid transparent;
+	position: absolute;
+	display: flex;
+	margin-top: -4px;
+	margin-left: 170px;
+}
+/*product-top*/
+
+.product-top img
+{
+	width: 100%;
+}
+
+.overlay-righ
+{
+	display: block;
+	opacity: 0;
+	position: absolute;
+	top:10%;
+	margin-left: 0;
+	width: 70px;
+}
+
+.overlay-righ .fa
+{
+	cursor: pointer;
+	background-color: black;
+	color: #000;
+	height: 35px;
+	width: 35px;
+	font-size: 20px;
+	padding: 7px;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.overlay-righ .btn-secondary
+{
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.product-top:hover .overlay-righ
+{
+	opacity: 1;
+	margin-left: 5%;
+	transition: 0.5s;
+}
+
+/*----Website features-----*/
+
+.website-features
+{
+	margin:60px 0;
+	background-color: black;
+}
+
+.website-features img
+{
+	width: 20%;
+}
+
+.feature-text
+{
+	margin-top: 10px;
+	float:right;
+	width: 80%;
+	padding-left: 20px;
+
+}
+
+.feature-box
+{
+	padding-top: 20px;
+
+}
+
+/*------------------------Footer-------*/
+.footer
+{
+	margin-top: 50px;
+	background: #000;
+	color:#fff;
+}
+
+.footer h1
+{
+	font-size: 15px;
+	margin: 25px 0;
+}
+
+.footer p 
+{
+	font-size:12px;
+}
+
+.copyright{
+	margin-bottom: -80px;
+	text-align: center;
+	font-style: 15px;
+	padding-bottom: 20px;
+}
+
+.fa-heart-o{
+	color:red;
+	font-size: 15px;
+}
+
+.footer hr{
+	margin-top: 10px;
+	background-color: black;
+}
+
+.footer-image img
+{
+	width: 150px;
+}
+
+.footer .row .fa
+{
+	padding-right: 20px;
+	font-size: 15px;
+}
+
