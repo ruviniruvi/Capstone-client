@@ -47,3 +47,15 @@ h1 {
   opacity: 40%;
   -webkit-transition: opacity 1s;
 }
+
+.backdrop{
+  background-color: white;
+}
+
+.item-button{
+  border-width: 0 !important;
+}
+
+.modal{
+  padding: 10px;
+}
