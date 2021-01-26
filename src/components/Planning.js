@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
-import Item from './Item'
+import Item from "./Item";
 
 export default function Planning(props) {
   let planning = props.planning;
-  if (planning.length > 1) {
+  if (planning.length >= 1) {
     return (
       <div className="planning-container">
         <h1>Planning</h1>
@@ -15,16 +15,7 @@ export default function Planning(props) {
         </div>
       </div>
     );
-  } else if (planning.length === 1) {
-    return (
-      <div className="planning-container">
-        <h1>Planning</h1>
-        <div className="display-list">
-        <Item item={planning} />
-      </div>
-      </div>
-    );
   } else {
-    return <div>NOTHING PLANNING</div>;
+    return <h1>NOTHING PLANNING</h1>;
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 //import 'react-datepicker/dist/react-datepicker.css'
 //import DatePicker from 'react-datepicker'
-import axios from 'axios';
+import axios from "axios";
 import "./AddNewList.css";
 class AddNewList extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class AddNewList extends Component {
     this.state = {
       title: "",
       description: "",
-      images: "",
+      images: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png",
       filter: "4",
       rating: 1,
       status: "Planning",
@@ -57,40 +57,29 @@ class AddNewList extends Component {
       ended_date: event.target.value,
     });
   };
-  addList(newList){
+  addList(newList) {
     // console.log(newList);
     // axios.get("https://capstone-ttp1.herokuapp.com/listings")
     // .then(response =>{
     //   console.log(response)
     // })
-      axios.post('https://capstone-ttp1.herokuapp.com/listings', 
-      {
+    axios
+      .post("https://capstone-ttp1.herokuapp.com/listings", {
         Title: this.state.title,
         Notes: this.state.description,
-       /* Image: {
-          name:this.state.images,
-          id:2,
-          formats: {
-            thumbnail: {
-              url:this.state.images
-            },
-          }
-		},*/
-		Images: this.state.images,
+        Images: this.state.images,
         filter: {
-                id:this.state.filter,
-              },
+          id: this.state.filter,
+        },
         Rating: this.state.rating,
-        Status:this.state.status,
+        Status: this.state.status,
         Started_At: this.state.started_date,
-         Finished_At: this.state.ended_date,
-        
-        
+        Finished_At: this.state.ended_date,
       })
-    .then(function (response) {
-      console.log(response + "posting response");
-    })
-   
+      .then(function (response) {
+        console.log(response + "posting response");
+      });
+
     //  axios.request({
     //     method:'post',
     //     url:'https://capstone-ttp1.herokuapp.com/admin',
@@ -100,27 +89,27 @@ class AddNewList extends Component {
     //   }).catch(err => console.log(err));
   }
   handleSubmit = (event) => {
-   // alert(
-  //    `${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status} ${this.state.started_date} ${this.state.ended_date}  `
-	//);
-	event.preventDefault();
-	const newList = {
-		Title: this.state.title,
-		Notes: this.state.description,
-		Image: this.state.images,
-		filter: this.state.filter,
-		Rating: this.state.rating,
-		Status:this.state.status,
-		Started_At: this.state.started_date,
-		Finished_At: this.state.ended_date,
-	  }
+    // alert(
+    //    `${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status} ${this.state.started_date} ${this.state.ended_date}  `
+    //);
+    event.preventDefault();
+    const newList = {
+      Title: this.state.title,
+      Notes: this.state.description,
+      Image: this.state.images,
+      filter: this.state.filter,
+      Rating: this.state.rating,
+      Status: this.state.status,
+      Started_At: this.state.started_date,
+      Finished_At: this.state.ended_date,
+    };
 
-console.log(this.state.title);
+    console.log(this.state.title);
 
-	//event.preventDefault();
-	this.addList(newList);
+    //event.preventDefault();
+    this.addList(newList);
   };
-  
+
   render() {
     const {
       title,
@@ -190,9 +179,9 @@ console.log(this.state.title);
               <div>
                 <label>Status</label>
                 <select value={status} onChange={this.handleStatusChange}>
-						<option value="Planning">Planning</option>
-						<option value="Current">Currently</option>
-						<option value="Completed">Completed</option>
+                  <option value="Planning">Planning</option>
+                  <option value="Current">Currently</option>
+                  <option value="Completed">Completed</option>
                 </select>
               </div>
               <div>

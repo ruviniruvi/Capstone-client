@@ -7,6 +7,7 @@ function Home() {
   return (
     <div className="home">
       <h1>USER</h1>
+      {  console.log(data)}
     </div>
   );
 }
