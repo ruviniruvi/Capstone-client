@@ -1,9 +1,54 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Anime from './pages/Anime';
+import Books from './pages/Books';
+import Games from './pages/Games';
+import Movies from './pages/Movies';
+import AddNewList from './pages/AddNewList';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
+import './App.css';
+
+const errorLink = onError(({ graphqlErrors, networkError }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert(`Graphql error ${message}`);
+    });
+  }
+});
+
+const link = from([
+  errorLink,
+  new HttpLink({ uri: "https://capstone-ttp1.herokuapp.com/graphql" }),
+]);
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: link,
+});
+
+
+
+/*import React from "react";
+
 
 //server imports
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import client from './utils/ApolloClient'
+
+
+
+
+
 
 //components
 import Navbar from "./components/Navbar";
@@ -16,7 +61,7 @@ import Books from "./pages/Books";
 import Games from "./pages/Games";
 import Movies from "./pages/Movies";
 
-import "./App.css";
+import "./App.css";*/
 
 function App() {
   return (
@@ -33,6 +78,7 @@ function App() {
 
 
     <ApolloProvider client={client}>
+
       <Router>
           {/* <FetchData /> */}
           <Navbar />
@@ -46,7 +92,10 @@ function App() {
            </ul>
       </Router>
       </ApolloProvider>
+
+
     </>
+
   );
 }
 
