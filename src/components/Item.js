@@ -32,7 +32,14 @@ export default class Item extends Component {
             onClose={this.toggleModal}
             id={this.state.item.id}
           >
-            {this.state.item[0].Notes}
+            <h6>Description</h6>
+            {this.state.item[0].Notes} <br />
+            <h6>Rating</h6>
+            {this.state.item[0].Rating}
+            <h6>Started At</h6>
+            {this.state.item[0].Started_At}
+            <h6>Finished At</h6>
+            {this.state.item[0].Finished_At}
           </Modal>
         </div>
       );
@@ -47,6 +54,7 @@ export default class Item extends Component {
             onClose={this.toggleModal}
             id={this.state.item.id}
           >
+            <h6>Description</h6>
             {this.state.item.Notes}
           </Modal>
         </div>
