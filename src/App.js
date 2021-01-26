@@ -20,23 +20,35 @@ import "./App.css";
 
 function App() {
   return (
-    <>
+
+    <><div className="App">
+     
+
+     <h1>Welcome to Our Girumi App</h1>
+
+   
+    </div>
+
+
+
+
     <ApolloProvider client={client}>
       <Router>
           {/* <FetchData /> */}
           <Navbar />
-          <Switch>
+          <ul class="nav-area">
             <Route path="/" exact component={Home} />
             <Route path="/anime" component={Anime} />
             <Route path="/books" component={Books} />
             <Route path="/games" component={Games} />
             <Route path="/movies" component={Movies} />
-            <Route path="/addnewlist" component={AddNewList} />
-          </Switch>
+           <Route path="/addnewlist" component={AddNewList} />
+           </ul>
       </Router>
       </ApolloProvider>
     </>
   );
 }
+
 
 export default App;

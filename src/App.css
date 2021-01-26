@@ -8,7 +8,19 @@
 }
 
 body{
-  background: black;
+  background:black;
+  justify-items: center;
+}
+.showcase {
+	width: 100%;
+	height: 93vh;
+	position: relative;
+	
+}
+.img{
+  width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 .home,
@@ -27,6 +39,8 @@ h1 {
   padding: 20px 0px;
   color:white;
 }
+
+
 
 .display-list{
   display:flex;
