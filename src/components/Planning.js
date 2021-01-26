@@ -19,7 +19,9 @@ export default function Planning(props) {
     return (
       <div className="planning-container">
         <h1>Planning</h1>
+        <div className="display-list">
         <Item item={planning} />
+      </div>
       </div>
     );
   } else {

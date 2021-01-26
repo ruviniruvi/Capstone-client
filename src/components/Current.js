@@ -19,7 +19,9 @@ export default function Current(props) {
     return (
       <div className="current-container">
         <h1>Current</h1>
+        <div className="display-list">
         <Item item={current} />
+      </div>
       </div>
     );
   } else {

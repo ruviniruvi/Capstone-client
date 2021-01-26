@@ -19,7 +19,9 @@ export default function Completed(props) {
     return (
       <div className="completed-container">
         <h1>Completed</h1>
+        <div className="display-list">
         <Item item={completed} />
+      </div>
       </div>
     );
   } else {

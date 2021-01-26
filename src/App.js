@@ -19,7 +19,7 @@ import {
   InMemoryCache,
   ApolloProvider,
   HttpLink,
-  from,
+  from
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
@@ -48,7 +48,6 @@ function App() {
   return (
     <>
     <ApolloProvider client={client}>
-
       <Router>
           {/* <FetchData /> */}
           <Navbar />
