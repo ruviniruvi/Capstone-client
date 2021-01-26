@@ -2,7 +2,7 @@ import React, { Component, useState,useEffect } from "react";
 import axios from 'axios';
 import "./AddNewList.css";
 import "./StarRating";
-import StarRatings from "react-star-ratings";
+import StarRatings from 'react-star-ratings';
 
 class AddNewList extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class AddNewList extends Component {
     this.state = {
       title: "",
       description: "",
-      images: "",
+      images: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png",
       filter: "4",
       rating: 1,
       status: "Planning",
@@ -63,53 +63,49 @@ class AddNewList extends Component {
       ended_date: event.target.value,
     });
   };
+
   addList(newList){
   
       axios.post('https://capstone-ttp1.herokuapp.com/listings', 
       {
         Title: this.state.title,
         Notes: this.state.description,
-     
 		Images: this.state.images,
         filter: {
-                id:this.state.filter,
-              },
+          id: this.state.filter,
+        },
         Rating: this.state.rating,
-        Status:this.state.status,
+        Status: this.state.status,
         Started_At: this.state.started_date,
-         Finished_At: this.state.ended_date,
-        
-        
+        Finished_At: this.state.ended_date,
       })
+
     .then(function (response) {
       console.log(response + "posting response");
     })
    
-    
   }
   handleSubmit = (event) => {
-   // alert(
-  //    `${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status} ${this.state.started_date} ${this.state.ended_date}  `
-	//);
-	event.preventDefault();
-	const newList = {
-		Title: this.state.title,
-		Notes: this.state.description,
-		Image: this.state.images,
-		filter: this.state.filter,
-		Rating: this.state.rating,
-		Status:this.state.status,
-		Started_At: this.state.started_date,
-		Finished_At: this.state.ended_date,
-	  }
+    // alert(
+    //    `${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status} ${this.state.started_date} ${this.state.ended_date}  `
+    //);
+    event.preventDefault();
+    const newList = {
+      Title: this.state.title,
+      Notes: this.state.description,
+      Image: this.state.images,
+      filter: this.state.filter,
+      Rating: this.state.rating,
+      Status: this.state.status,
+      Started_At: this.state.started_date,
+      Finished_At: this.state.ended_date,
+    };
 
-console.log(this.state.title);
+    console.log(this.state.title);
 
-	//event.preventDefault();
-	this.addList(newList);
+    //event.preventDefault();
+    this.addList(newList);
   };
-  
-
 
   render() {
     const {
@@ -178,9 +174,9 @@ console.log(this.state.title);
               <div>
                 <label>Status</label>
                 <select value={status} onChange={this.handleStatusChange}>
-						<option value="Planning">Planning</option>
-						<option value="Current">Currently</option>
-						<option value="Completed">Completed</option>
+                  <option value="Planning">Planning</option>
+                  <option value="Current">Currently</option>
+                  <option value="Completed">Completed</option>
                 </select>
               </div>
               <div>
