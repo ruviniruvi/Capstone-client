@@ -6,6 +6,7 @@ function Home() {
   const { loading, error, data } = useQuery(GET_POSTS);
   return (
 	<div className="App">
+		
    </div>
     
   );
