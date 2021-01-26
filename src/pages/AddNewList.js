@@ -1,8 +1,8 @@
-import React, { Component, useState,useEffect } from "react";
-import axios from 'axios';
+import React, { Component, useState, useEffect } from "react";
+import axios from "axios";
 import "./AddNewList.css";
 import "./StarRating";
-import StarRatings from 'react-star-ratings';
+import StarRatings from "react-star-ratings";
 
 class AddNewList extends Component {
   constructor(props) {
@@ -10,7 +10,8 @@ class AddNewList extends Component {
     this.state = {
       title: "",
       description: "",
-      images: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png",
+      images:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png",
       filter: "4",
       rating: 1,
       status: "Planning",
@@ -19,7 +20,6 @@ class AddNewList extends Component {
     };
 
     this.handleRatingChange = this.handleRatingChange.bind(this);
-
   }
   handleTitleChange = (event) => {
     this.setState({
@@ -41,12 +41,12 @@ class AddNewList extends Component {
       filter: event.target.value,
     });
   };
-  handleRatingChange(newRating){
-    console.log(newRating)
+  handleRatingChange(newRating) {
+    console.log(newRating);
     this.setState({
       rating: newRating,
     });
-  };
+  }
 
   handleStatusChange = (event) => {
     this.setState({
@@ -64,13 +64,12 @@ class AddNewList extends Component {
     });
   };
 
-  addList(newList){
-  
-      axios.post('https://capstone-ttp1.herokuapp.com/listings', 
-      {
+  addList() {
+    axios
+      .post("https://capstone-ttp1.herokuapp.com/listings", {
         Title: this.state.title,
         Notes: this.state.description,
-		Images: this.state.images,
+        Images: this.state.images,
         filter: {
           id: this.state.filter,
         },
@@ -79,32 +78,18 @@ class AddNewList extends Component {
         Started_At: this.state.started_date,
         Finished_At: this.state.ended_date,
       })
-
-    .then(function (response) {
-      console.log(response + "posting response");
-    })
-   
+      .then(function (response) {
+        console.log(response + "posting response");
+      });
   }
   handleSubmit = (event) => {
+    // testing only
     // alert(
     //    `${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status} ${this.state.started_date} ${this.state.ended_date}  `
     //);
     event.preventDefault();
-    const newList = {
-      Title: this.state.title,
-      Notes: this.state.description,
-      Image: this.state.images,
-      filter: this.state.filter,
-      Rating: this.state.rating,
-      Status: this.state.status,
-      Started_At: this.state.started_date,
-      Finished_At: this.state.ended_date,
-    };
-
     console.log(this.state.title);
-
-    //event.preventDefault();
-    this.addList(newList);
+    this.addList();
   };
 
   render() {
@@ -118,7 +103,6 @@ class AddNewList extends Component {
       started_date,
       ended_date,
     } = this.state;
-    //const [selectedDate, setSelectedDate] = useState(null);
     return (
       <div className="wrapper">
         <div className="form-wrapper">
@@ -154,7 +138,7 @@ class AddNewList extends Component {
               </div>
               <div>
                 <label>Filter</label>
-                <select value={filter}  onChange={this.handleFilterChange}>
+                <select value={filter} onChange={this.handleFilterChange}>
                   <option value="4">Anime</option>
                   <option value="2">Books</option>
                   <option value="1">Games</option>
@@ -168,7 +152,7 @@ class AddNewList extends Component {
                   starRatedColor="yellow"
                   changeRating={this.handleRatingChange}
                   numberOfStars={10}
-                  name='rating'
+                  name="rating"
                 />
               </div>
               <div>
