@@ -1,8 +1,9 @@
-import React, { Component, useState } from "react";
-//import 'react-datepicker/dist/react-datepicker.css'
-//import DatePicker from 'react-datepicker'
-import axios from "axios";
+import React, { Component, useState,useEffect } from "react";
+import axios from 'axios';
 import "./AddNewList.css";
+import "./StarRating";
+import StarRatings from 'react-star-ratings';
+
 class AddNewList extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,9 @@ class AddNewList extends Component {
       started_date: "",
       ended_date: "",
     };
+
+    this.handleRatingChange = this.handleRatingChange.bind(this);
+
   }
   handleTitleChange = (event) => {
     this.setState({
@@ -37,11 +41,13 @@ class AddNewList extends Component {
       filter: event.target.value,
     });
   };
-  handleRatingChange = (event) => {
+  handleRatingChange(newRating){
+    console.log(newRating)
     this.setState({
-      rating: event.target.value,
+      rating: newRating,
     });
   };
+
   handleStatusChange = (event) => {
     this.setState({
       status: event.target.value,
@@ -57,17 +63,14 @@ class AddNewList extends Component {
       ended_date: event.target.value,
     });
   };
-  addList(newList) {
-    // console.log(newList);
-    // axios.get("https://capstone-ttp1.herokuapp.com/listings")
-    // .then(response =>{
-    //   console.log(response)
-    // })
-    axios
-      .post("https://capstone-ttp1.herokuapp.com/listings", {
+
+  addList(newList){
+  
+      axios.post('https://capstone-ttp1.herokuapp.com/listings', 
+      {
         Title: this.state.title,
         Notes: this.state.description,
-        Images: this.state.images,
+		Images: this.state.images,
         filter: {
           id: this.state.filter,
         },
@@ -76,17 +79,11 @@ class AddNewList extends Component {
         Started_At: this.state.started_date,
         Finished_At: this.state.ended_date,
       })
-      .then(function (response) {
-        console.log(response + "posting response");
-      });
 
-    //  axios.request({
-    //     method:'post',
-    //     url:'https://capstone-ttp1.herokuapp.com/admin',
-    //     data: newList
-    //   }).then(response => {
-    //     this.props.history.push('/');
-    //   }).catch(err => console.log(err));
+    .then(function (response) {
+      console.log(response + "posting response");
+    })
+   
   }
   handleSubmit = (event) => {
     // alert(
@@ -133,6 +130,7 @@ class AddNewList extends Component {
                 <input
                   type="text"
                   value={title}
+                  placeholder="Enter title.."
                   onChange={this.handleTitleChange}
                 />
               </div>
@@ -141,6 +139,7 @@ class AddNewList extends Component {
                 <input
                   type="text"
                   value={description}
+                  placeholder="Enter description.."
                   onChange={this.handleDescriptionChange}
                 />
               </div>
@@ -149,12 +148,13 @@ class AddNewList extends Component {
                 <input
                   type="text"
                   value={images}
+                  placeholder="Enter image url.."
                   onChange={this.handleImageChange}
                 />
               </div>
               <div>
                 <label>Filter</label>
-                <select value={filter} onChange={this.handleFilterChange}>
+                <select value={filter}  onChange={this.handleFilterChange}>
                   <option value="4">Anime</option>
                   <option value="2">Books</option>
                   <option value="1">Games</option>
@@ -163,18 +163,13 @@ class AddNewList extends Component {
               </div>
               <div>
                 <label>Rating</label>
-                <select value={rating} onChange={this.handleRatingChange}>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
+                <StarRatings
+                  rating={this.state.rating}
+                  starRatedColor="yellow"
+                  changeRating={this.handleRatingChange}
+                  numberOfStars={10}
+                  name='rating'
+                />
               </div>
               <div>
                 <label>Status</label>
