@@ -9,6 +9,7 @@ export const GET_POSTS = gql`
       Started_At
       Finished_At
       filter {
+        id
         name
       }
       tags {

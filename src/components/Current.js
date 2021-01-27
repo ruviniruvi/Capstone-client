@@ -4,7 +4,10 @@ import Item from "./Item";
 
 export default function Current(props) {
   let current = props.current;
-  if (current.length > 1) {
+  console.log("current props: ")
+  console.log(props)
+
+  if (current.length >= 1) {
     return (
       <div className="current-container">
         <h1>Current</h1>
@@ -15,16 +18,7 @@ export default function Current(props) {
         </div>
       </div>
     );
-  } else if (current.length === 1) {
-    return (
-      <div className="current-container">
-        <h1>Current</h1>
-        <div className="display-list">
-        <Item item={current} />
-      </div>
-      </div>
-    );
-  } else {
-    return <div>NOTHING CURRENTLY</div>;
+} else {
+    return <h1>NOTHING CURRENTLY</h1>;
   }
 }

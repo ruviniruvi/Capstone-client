@@ -8,6 +8,7 @@
 }
 
 body{
+
   background:black;
   justify-items: center;
 }
@@ -21,6 +22,8 @@ body{
   width: 100%;
 	height: 100%;
 	position: relative;
+  background: black !important;
+
 }
 
 .home,
@@ -34,12 +37,18 @@ body{
 }
 
 h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   text-align: left !important;
   padding: 20px 0px;
   color:white !important;
 }
 
+
+
+p{
+  color:white !important;
+  padding: 3px;
+}
 
 
 .display-list{
@@ -49,8 +58,7 @@ h1 {
 .listing{
   padding: 0px 5px;
   opacity: 100%;
-
-  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
 
 .container{
@@ -59,11 +67,12 @@ h1 {
 
 .listing:hover{
   opacity: 40%;
-  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
 
 .backdrop{
   background-color: white;
+  width:300px;
 }
 
 .item-button{
@@ -75,5 +84,19 @@ h1 {
 }
 
 button{
-  padding: 20px;
+  padding: 0px;
+  border: none;
+  background: none;
+  border: 0;
+}
+
+.footer button{
+  background: grey;
+  padding: 10px;
+  margin: 3px 4px;
+}
+
+.footer {
+  display:flex;
+  justify-content: flex-end;
 }

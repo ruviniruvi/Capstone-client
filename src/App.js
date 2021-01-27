@@ -25,6 +25,7 @@ import { onError } from "@apollo/client/link/error";
 
 //styling
 import './App.css';
+import StarRating from './pages/StarRating';
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
