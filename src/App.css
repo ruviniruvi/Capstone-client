@@ -36,13 +36,10 @@ body{
   font-size: 3rem;
 }
 
-h1 {
-  font-family: 'Poppins', sans-serif !important;
-  text-align: left !important;
-  padding: 20px 0px;
-  color:white !important;
+.h1, h1 {
+  font-size: 2.5rem;
+  background-color: black;
 }
-
 
 
 p{
@@ -99,4 +96,36 @@ button{
 .footer {
   display:flex;
   justify-content: flex-end;
+}
+
+
+.slider
+{
+	width: 68%;
+	margin-left: 12%;
+	padding: 0  -100px;
+}
+
+
+.caraousel-indicators
+{
+z-index: 1 !important;
+}
+
+@media only screen and(max-width: 980px)
+{
+	.slider
+	{
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+.home, .addnewlist, .anime .books .games .movies {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: black;
 }

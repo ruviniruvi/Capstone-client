@@ -3,6 +3,7 @@ import { GET_POSTS } from '../utils/Queries'
 import { useQuery } from '@apollo/client'
 
 
+
 function Home() {
   const { loading, error, data } = useQuery(GET_POSTS);
   return (
@@ -10,51 +11,34 @@ function Home() {
     <div className="home">  
       <h1>USER</h1>
       {  console.log(data)}
- 
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"></link>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"></link>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.1/css/font-awesome.min.css"></link>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	  
+	  
+	  <div class="carousel"></div>
+  <button class="carousel__button previous" id="previous"></button>
+  <div class="carousel__images"></div>
+    <img src="imagine1.jpg"  height="550" width="400px" ></img>
+    <img src="imagine2.jpg"  height="550" width="400px"></img>
+    <img src="imagine3.jpg"  height="550" width="400px"></img>
+    <img src="imagine4.jpg" height="550" width="400px"></img>
 
 
-<div id="slider" class="carousel slide carousel-fade" data-ride="carousel"></div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagine1.jpg" class="d-block w-100" height="750" width="2050px" ></img>
-    </div></div>
-    <div class="carousel-item">
-      <img src="imagine2.jpg" class="d-block w-100" height="750" width="2050px"></img>
-   </div>
-    <div class="carousel-item"> 
-      <img src="imagine3.jpg" class="d-block w-100"  height="750" width="2050px"></img>
-    </div>
-    <div class="carousel-item">
-      <img src="imagine4.jpg" class="d-block w-100" height="750" width="2050px"></img>
-    </div>
+  <button class="carousel__button next" id="next"></button>
 
 
-	  <ol class="carousel-indicators">
-    <li data-target="#slider" data-slide-to="0" class="active"></li>
-    <li data-target="#slider" data-slide-to="1"></li>
-    <li data-target="#slider" data-slide-to="2"></li>
-    <li data-target="#slider" data-slide-to="3"></li>
-  </ol>
-
-
-		
-			
-		
 	</div>
-
-
-
-
   );
 }
  
+
+
 const tabItems = document.querySelectorAll('.tab-item');
 const tabContentItems = document.querySelectorAll('.tab-content-item');
 
