@@ -4,8 +4,6 @@ import Item from "./Item";
 
 export default function Current(props) {
   let current = props.current;
-  console.log("current props: ")
-  console.log(props)
 
   if (current.length >= 1) {
     return (

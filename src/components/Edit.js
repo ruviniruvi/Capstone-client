@@ -84,8 +84,8 @@ export default class Edit extends Component {
         Status: this.state.status,
         Started_At: this.state.started_date,
         Finished_At: this.state.ended_date,
-      }
-      )
+      })
+      alert("Edit success!")
   }
 
   render() {

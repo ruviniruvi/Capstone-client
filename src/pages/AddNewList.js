@@ -1,7 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
 import axios from "axios";
 import "./AddNewList.css";
-import "./StarRating";
 import StarRatings from "react-star-ratings";
 
 class AddNewList extends Component {
@@ -18,29 +17,33 @@ class AddNewList extends Component {
       started_date: "",
       ended_date: "",
     };
-
     this.handleRatingChange = this.handleRatingChange.bind(this);
   }
+  
   handleTitleChange = (event) => {
     this.setState({
       title: event.target.value,
     });
   };
+
   handleDescriptionChange = (event) => {
     this.setState({
       description: event.target.value,
     });
   };
+
   handleImageChange = (event) => {
     this.setState({
       images: event.target.value,
     });
   };
+
   handleFilterChange = (event) => {
     this.setState({
       filter: event.target.value,
     });
   };
+
   handleRatingChange(newRating) {
     console.log(newRating);
     this.setState({
@@ -53,11 +56,13 @@ class AddNewList extends Component {
       status: event.target.value,
     });
   };
+
   handleStartedDateChange = (event) => {
     this.setState({
       started_date: event.target.value,
     });
   };
+
   handleEndedDateChange = (event) => {
     this.setState({
       ended_date: event.target.value,

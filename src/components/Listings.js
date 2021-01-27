@@ -19,14 +19,14 @@ export default class Listings extends Component {
         this.findCurrent();
         this.findPlanning();
     }
-
+    
     findCurrent(){
         this.props.lists.map(item => {
             if(item.Status === "Current"){
                 this.state.current.push(item)
             }
-            console.log("current")
-            console.log(this.state.current)
+            // console.log("current")
+            // console.log(this.state.current)
         })
     }
     findCompleted(){
@@ -34,8 +34,8 @@ export default class Listings extends Component {
             if(item.Status === "Completed"){
                 this.state.completed.push(item)
             }
-            console.log("completed")
-            console.log(this.state.completed)
+            // console.log("completed")
+            // console.log(this.state.completed)
         })
     }
 
@@ -44,8 +44,8 @@ export default class Listings extends Component {
             if(item.Status === "Planning"){
                 this.state.planning.push(item)
             }
-            console.log("planning")
-            console.log(this.state.planning)
+            // console.log("planning")
+            // console.log(this.state.planning)
         })
     }
 
