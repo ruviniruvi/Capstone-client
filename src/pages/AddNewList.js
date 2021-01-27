@@ -1,7 +1,7 @@
 import React, { Component, useState,useEffect } from "react";
 import axios from 'axios';
 import "./AddNewList.css";
-import "./StarRating";
+//import "./StarRating";
 import StarRatings from 'react-star-ratings';
 
 
@@ -213,4 +213,4 @@ class AddNewList extends Component {
 
 
 
-//export default AddNewList;
+export default AddNewList;

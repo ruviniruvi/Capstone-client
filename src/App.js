@@ -10,6 +10,7 @@ import Anime from './pages/Anime';
 import Books from './pages/Books';
 import Games from './pages/Games';
 import Movies from './pages/Movies';
+import Login from './pages/Login';
 import AddNewList from './pages/AddNewList';
 
 //backend imports
@@ -58,6 +59,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/login"  component={Login} />
             <Route path="/anime" component={Anime} />
             <Route path="/books" component={Books} />
             <Route path="/games" component={Games} />
