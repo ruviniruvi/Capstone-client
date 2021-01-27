@@ -1,6 +1,9 @@
 import React from 'react';
+
+
 //components
 import Navbar from './components/Navbar';
+
 //pages
 import Home from './pages/Home';
 import Anime from './pages/Anime';
@@ -22,11 +25,7 @@ import { onError } from "@apollo/client/link/error";
 
 //styling
 import './App.css';
-
-import { makeStyles } from '@material-ui/core/styles';
-
-
-
+import StarRating from './pages/StarRating';
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -46,40 +45,28 @@ const client = new ApolloClient({
   link: link,
 });
 
-
-
- export default function App() {
-  const classes = useStyles();
+function App() {
   return (
-
-    <><div className={classes.root}>
-
-</div>
+    <>
     <ApolloProvider client={client}>
       <Router>
           {/* <FetchData /> */}
           <Navbar />
-          <ul class="nav-area">
+          <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/anime" component={Anime} />
             <Route path="/books" component={Books} />
             <Route path="/games" component={Games} />
             <Route path="/movies" component={Movies} />
-           <Route path="/addnewlist" component={AddNewList} />
-           </ul>
+            <Route path="/addnewlist" component={AddNewList} />
+          </Switch>
       </Router>
       </ApolloProvider>
+
 
     </>
 
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: '100vh',
-    backgroundImage: 'url(../public/assets/bg.jpg)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-  },
-}));
+export default App;

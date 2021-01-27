@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     fontFamily: 'Nunito',
   },
+  
   appbar: {
     background: 'none',
   },
@@ -24,8 +25,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: '1',
   },
   
- 
-
   icon: {
     color: '#fff',
     fontSize: '2rem',

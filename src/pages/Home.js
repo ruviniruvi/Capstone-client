@@ -1,7 +1,6 @@
 import React from "react";
 import { GET_POSTS } from '../utils/Queries'
 import { useQuery } from '@apollo/client'
-
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import Header from '../components/Header';
@@ -10,12 +9,8 @@ import PlaceToVisit from '../components/PlaceToVisit';
 
 function Home() {
 
-
-	
 		const classes = useStyles();
-		
-	  
-		  
+			  
 
   const { loading, error, data } = useQuery(GET_POSTS);
   return (
@@ -24,16 +19,11 @@ function Home() {
 
 
       {  console.log(data)}
-	
+
 	  <CssBaseline />
       <Header />
       <PlaceToVisit />
 	</div>
-
-
-
-
-
 
   );
 }
@@ -41,7 +31,7 @@ function Home() {
 const useStyles = makeStyles((theme) => ({
 	root: {
 	  minHeight: '100vh',
-	  backgroundImage: 'bg.jpg',
+	  backgroundImage: `url('../public/assets/bg.jpg'})`,
 	  backgroundRepeat: 'no-repeat',
 	  backgroundSize: 'cover',
 	},
