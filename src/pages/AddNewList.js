@@ -4,6 +4,7 @@ import "./AddNewList.css";
 import "./StarRating";
 import StarRatings from 'react-star-ratings';
 
+
 class AddNewList extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,7 @@ class AddNewList extends Component {
     };
 
     this.handleRatingChange = this.handleRatingChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
 
   }
   handleTitleChange = (event) => {
@@ -102,7 +104,7 @@ class AddNewList extends Component {
     };
 
     console.log(this.state.title);
-
+//  this.props.createList(list);
     //event.preventDefault();
     this.addList(newList);
   };
@@ -124,6 +126,7 @@ class AddNewList extends Component {
         <div className="form-wrapper">
           <div className="form-container">
             <h1>Add New Favorite Anime , Book , Game or Movie To Your List!</h1>
+       
             <form onSubmit={this.handleSubmit}>
               <div className="title">
                 <label>Title </label>
@@ -203,4 +206,11 @@ class AddNewList extends Component {
     );
   }
 }
-export default AddNewList;
+
+
+
+
+
+
+
+//export default AddNewList;
