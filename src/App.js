@@ -1,31 +1,29 @@
-import React from 'react';
-
+import React from "react";
 
 //components
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 
 //pages
-import Home from './pages/Home';
-import Anime from './pages/Anime';
-import Books from './pages/Books';
-import Games from './pages/Games';
-import Movies from './pages/Movies';
-import AddNewList from './pages/AddNewList';
+import Home from "./pages/Home";
+import Anime from "./pages/Anime";
+import Books from "./pages/Books";
+import Games from "./pages/Games";
+import Movies from "./pages/Movies";
+import AddNewList from "./pages/AddNewList";
 
 //backend imports
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   HttpLink,
-  from
+  from,
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
 //styling
-import './App.css';
-import StarRating from './pages/StarRating';
+import "./App.css";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -48,9 +46,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <>
-    <ApolloProvider client={client}>
-      <Router>
-          {/* <FetchData /> */}
+      <ApolloProvider client={client}>
+        <Router>
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
@@ -60,12 +57,9 @@ function App() {
             <Route path="/movies" component={Movies} />
             <Route path="/addnewlist" component={AddNewList} />
           </Switch>
-      </Router>
+        </Router>
       </ApolloProvider>
-
-
     </>
-
   );
 }
 

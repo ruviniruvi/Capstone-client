@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap'
 export default function Delete(props) {
     function onDelete(){
         axios.delete(`https://capstone-ttp1.herokuapp.com/listings/${props.id}`)
+        alert("Delete successful!")
     }
     return (
         <Button onClick={onDelete}>

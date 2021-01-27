@@ -7,6 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Collapse } from '@material-ui/core';
 
+import Image1 from '../assets/imagine1.jpg'
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 645,

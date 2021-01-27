@@ -30,7 +30,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Add New List',
+    title: 'Add New Listing',
     path: '/addnewlist',  
     cName: 'nav-text'
   }

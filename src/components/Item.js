@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import ModalBox from "./ModalBox";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 export default class Item extends Component {
   constructor(props) {
@@ -16,36 +17,27 @@ export default class Item extends Component {
     this.setState({
       isOpen: !this.state.isOpen,
     });
-    console.log(this.state.item)
+    console.log(this.state.item);
   };
 
-
   render() {
-    if (this.state.item.length === 1) {
-      return (
-        <div className="listing" key={this.state.item[0].id}>
-          <button onClick={this.toggleModal}>
-            <img src={this.state.item[0].Images} height="400" width="300"/>
-          </button>
-
-          <ModalBox
-            show={this.state.isOpen}
-            onHide={this.toggleModal}
-            item={this.state.item} />
-        </div>
-      );
-    } else {
       return (
         <div className="listing" key={this.state.item.id}>
+          <OverlayTrigger
+            key={this.state.item.id}
+            placement="top"
+            overlay={<Tooltip id={`tooltop-top`}>{this.state.item.Title}</Tooltip>}
+          >
           <button className="item-button" onClick={this.toggleModal}>
-            <img src={this.state.item.Images} height="400" width="300"/>
+            <img src={this.state.item.Images} height="400" width="300" />
           </button>
+          </OverlayTrigger>
           <ModalBox
             show={this.state.isOpen}
             onHide={this.toggleModal}
-            item={this.state.item} />
+            item={this.state.item}
+          />
         </div>
       );
     }
   }
-}

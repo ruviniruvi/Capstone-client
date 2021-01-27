@@ -1,12 +1,9 @@
-
-
 html {
   font-size: 10px;
 }
 
 *, ::after, ::before {
   box-sizing: border-box;
-  background-color: black;
   color: white;
 }
 
@@ -31,7 +28,7 @@ body {
   width: 100%;
 	height: 100%;
 	position: relative;
-  background: black !important;
+  /* background: black !important; */
 
 }
 
@@ -56,7 +53,6 @@ body {
 }
 
 p{
-  color:white !important;
   padding: 3px;
 }
 
@@ -75,6 +71,9 @@ p{
   padding: 0px 100px;
 }
 
+.current-container h1{
+  color: white;
+}
 .listing:hover{
   opacity: 40%;
   transition: opacity 1s;
@@ -112,6 +111,19 @@ button{
 }
 
 
+.review-container{
+  margin: 0px 10px;
+}
+
+.review-text{
+  padding: 5px;
+  width: 100%;
+}
+
+.overlay{
+  position: absolute;
+}
+
 .slider
 {
 	width: 68%;
@@ -140,5 +152,5 @@ z-index: 1 !important;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  background-color: black;
+  /* background-color: black; */
 }
