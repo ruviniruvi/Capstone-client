@@ -31,13 +31,16 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
+
     title: "Movies",
     path: "/movies",
     cName: "nav-text",
   },
-  {
-    title: "Add New List",
-    path: "/addnewlist",
-    cName: "nav-text",
-  },
+ 
+{
+    title: 'Add New Listing',
+    path: '/addnewlist',  
+    cName: 'nav-text'
+  }
+
 ];
