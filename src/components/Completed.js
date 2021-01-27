@@ -3,7 +3,15 @@ import Item from "./Item";
 import "../App.css";
 
 export default function Completed(props) {
-  let completed = props.completed;
+  let completed = [];
+    props.completed.map(item => {
+        if(item.Status === "Completed"){
+            completed.push(item)
+        }
+        // console.log("completed")
+        // console.log(this.state.completed)
+    })
+
   if (completed.length >= 1) {
     return (
       <div className="completed-container">

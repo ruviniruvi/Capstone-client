@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 //components
 import Navbar from './components/Navbar';
 
@@ -49,7 +48,6 @@ function App() {
     <>
     <ApolloProvider client={client}>
       <Router>
-          {/* <FetchData /> */}
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />

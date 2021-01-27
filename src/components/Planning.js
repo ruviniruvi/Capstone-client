@@ -3,7 +3,15 @@ import "../App.css";
 import Item from "./Item";
 
 export default function Planning(props) {
-  let planning = props.planning;
+  let planning = [];
+  props.planning.map(item => {
+    if(item.Status === "Planning"){
+        planning.push(item)
+    }
+    // console.log("planning")
+    // console.log(this.state.planning)
+})
+
   if (planning.length >= 1) {
     return (
       <div className="planning-container">

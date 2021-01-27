@@ -3,8 +3,17 @@ import "../App.css";
 import Item from "./Item";
 
 export default function Current(props) {
-  let current = props.current;
+  let current = [];
+    props.current.map(item => {
+        if(item.Status === "Current"){
+            current.push(item)
+        }
+        console.log("current")
+        console.log(current)
+    })
 
+  
+  console.log(current)
   if (current.length >= 1) {
     return (
       <div className="current-container">
