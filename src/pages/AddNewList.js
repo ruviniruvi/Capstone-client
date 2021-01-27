@@ -1,7 +1,10 @@
 import React, { Component, useState, useEffect } from "react";
 import axios from "axios";
 import "./AddNewList.css";
+
 import StarRatings from "react-star-ratings";
+
+
 
 class AddNewList extends Component {
   constructor(props) {
@@ -18,6 +21,8 @@ class AddNewList extends Component {
       ended_date: "",
     };
     this.handleRatingChange = this.handleRatingChange.bind(this);
+
+
   }
   
   handleTitleChange = (event) => {
@@ -94,7 +99,9 @@ class AddNewList extends Component {
     //);
     event.preventDefault();
     console.log(this.state.title);
+
     this.addList();
+
   };
 
   render() {
@@ -113,6 +120,7 @@ class AddNewList extends Component {
         <div className="form-wrapper">
           <div className="form-container">
             <h1>Add New Favorite Anime , Book , Game or Movie To Your List!</h1>
+       
             <form onSubmit={this.handleSubmit}>
               <div className="title">
                 <label>Title </label>
@@ -192,4 +200,11 @@ class AddNewList extends Component {
     );
   }
 }
+
+
+
+
+
+
+
 export default AddNewList;

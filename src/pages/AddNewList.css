@@ -3,7 +3,7 @@ form {
   display: flex;
   flex-wrap: wrap;
   background-color: lightblue;
-  position: relative;
+ 
   padding: 20px;
 }
 
@@ -40,7 +40,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 10px 50px #555;
   background-color: lightblue;
-  position: relative;
+ 
 }
 
 label {
