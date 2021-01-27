@@ -1,9 +1,6 @@
 import React from 'react';
-
-
 //components
 import Navbar from './components/Navbar';
-
 //pages
 import Home from './pages/Home';
 import Anime from './pages/Anime';
@@ -25,7 +22,11 @@ import { onError } from "@apollo/client/link/error";
 
 //styling
 import './App.css';
-import StarRating from './pages/StarRating';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -45,20 +46,15 @@ const client = new ApolloClient({
   link: link,
 });
 
-function App() {
+
+
+ export default function App() {
+  const classes = useStyles();
   return (
 
-    <><div className="App">
-     
+    <><div className={classes.root}>
 
-     <h1>Welcome to Girumi App</h1>
-
-   
-    </div>
-
-
-
-
+</div>
     <ApolloProvider client={client}>
       <Router>
           {/* <FetchData /> */}
@@ -74,11 +70,16 @@ function App() {
       </Router>
       </ApolloProvider>
 
-
     </>
 
   );
 }
 
-
-export default App;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: '100vh',
+    backgroundImage: 'url(../public/assets/bg.jpg)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+  },
+}));

@@ -2,27 +2,51 @@ import React from "react";
 import { GET_POSTS } from '../utils/Queries'
 import { useQuery } from '@apollo/client'
 
+import { makeStyles } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
+import Header from '../components/Header';
+import PlaceToVisit from '../components/PlaceToVisit';
+
+
 function Home() {
+
+
+	
+		const classes = useStyles();
+		
+	  
+		  
+
   const { loading, error, data } = useQuery(GET_POSTS);
   return (
 
-    <div className="home">  
-      <h1>USER</h1>
+	<div className={classes.root}>
+
+
       {  console.log(data)}
-	  
-	  
-	  <div class="carousel"></div>
-  <button class="carousel__button previous" id="previous"></button>
-  <div class="carousel__images"></div>
-    <img src="imagine1.jpg"  height="550" width="400px" ></img>
-    <img src="imagine2.jpg"  height="550" width="400px"></img>
-    <img src="imagine3.jpg"  height="550" width="400px"></img>
-    <img src="imagine4.jpg" height="550" width="400px"></img>
-	<button class="carousel__button next" id="next"></button>
+	
+	  <CssBaseline />
+      <Header />
+      <PlaceToVisit />
 	</div>
+
+
+
+
+
+
   );
 }
- 
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+	  minHeight: '100vh',
+	  backgroundImage: 'bg.jpg',
+	  backgroundRepeat: 'no-repeat',
+	  backgroundSize: 'cover',
+	},
+  }));
+  
 
 
 const tabItems = document.querySelectorAll('.tab-item');
