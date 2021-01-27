@@ -22,6 +22,7 @@ export const GET_POSTS = gql`
       Status
       Images
       Rating
+      Review
     }
   }
 `;

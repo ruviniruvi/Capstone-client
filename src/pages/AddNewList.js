@@ -10,7 +10,7 @@ class AddNewList extends Component {
       title: "",
       description: "",
       images:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png",
+        "https://ualr.edu/elearning/files/2020/10/No-Photo-Available.jpg",
       filter: "4",
       rating: 1,
       status: "Planning",

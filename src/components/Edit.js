@@ -59,15 +59,15 @@ export default class Edit extends Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-      console.log(this.state.item.id)
-      console.log(this.state.title)
-      console.log(this.state.description)
-      console.log(this.state.images)
-      console.log(this.state.filter)
-      console.log(this.state.rating)
-      console.log(this.state.status)
-      console.log(this.state.started_date)
-      console.log(this.state.ended_date)
+      // console.log(this.state.item.id)
+      // console.log(this.state.title)
+      // console.log(this.state.description)
+      // console.log(this.state.images)
+      // console.log(this.state.filter)
+      // console.log(this.state.rating)
+      // console.log(this.state.status)
+      // console.log(this.state.started_date)
+      // console.log(this.state.ended_date)
       this.updateDate();
   }
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Delete from "./Delete";
 import Edit from "./Edit";
+import Review from './Review'
 import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,15 +10,22 @@ export default class EditModal extends Component {
     super(props);
     this.state = {
       isEdit: false,
+      isReview: false
     };
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.toggleReview = this.toggleReview.bind(this);
   }
 
   toggleEdit() {
     this.setState({
       isEdit: !this.state.isEdit,
     });
-    console.log(this.state.isEdit);
+  }
+
+  toggleReview(){
+    this.setState({
+      isReview: !this.state.isReview                 
+    })
   }
 
   render() {
@@ -43,13 +51,17 @@ export default class EditModal extends Component {
             {this.props.item[0].Started_At}
             <h6>Finished At</h6>
             {this.props.item[0].Finished_At}
+            <h6>Review/Notes</h6>
+            {this.props.item[0].Review}
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.toggleEdit}>Edit</Button>
+            <Button onClick={this.toggleReview}>Add/Edit Notes</Button>
+            <Button onClick={this.toggleEdit}>Edit Details</Button>
             <Delete id={this.props.id} />
             <Button onClick={this.props.onHide}>Close</Button>
           </Modal.Footer>
           <Edit show={this.state.isEdit} item={this.props.item} />
+          <Review show={this.state.isReview} item={this.props.item}/>
         </Modal>
       );
     } else {
@@ -74,13 +86,17 @@ export default class EditModal extends Component {
             {this.props.item.Started_At}
             <h6>Finished At</h6>
             {this.props.item.Finished_At}
+            <h6>Review/Notes</h6>
+            {this.props.item.Review}
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.toggleEdit}>Edit</Button>
+            <Button onClick={this.toggleReview}>Add/Edit Notes</Button>
+            <Button onClick={this.toggleEdit}>Edit Details</Button>
             <Delete id={this.props.item.id} />
             <Button onClick={this.props.onHide}>Close</Button>
           </Modal.Footer>
           <Edit show={this.state.isEdit} item={this.props.item} />
+          <Review show={this.state.isReview} item={this.props.item}/>
         </Modal>
       );
     }
