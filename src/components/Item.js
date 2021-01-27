@@ -30,7 +30,6 @@ export default class Item extends Component {
           >
           <button className="item-button" onClick={this.toggleModal}>
             <img src={this.state.item.Images} height="400" width="300" />
-            <div className="overlay">testtestestse</div>
           </button>
           </OverlayTrigger>
           <ModalBox
