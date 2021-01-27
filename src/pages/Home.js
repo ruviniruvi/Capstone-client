@@ -2,8 +2,6 @@ import React from "react";
 import { GET_POSTS } from '../utils/Queries'
 import { useQuery } from '@apollo/client'
 
-
-
 function Home() {
   const { loading, error, data } = useQuery(GET_POSTS);
   return (
@@ -11,14 +9,6 @@ function Home() {
     <div className="home">  
       <h1>USER</h1>
       {  console.log(data)}
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"></link>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.1/css/font-awesome.min.css"></link>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 	  
 	  
 	  <div class="carousel"></div>
@@ -28,11 +18,7 @@ function Home() {
     <img src="imagine2.jpg"  height="550" width="400px"></img>
     <img src="imagine3.jpg"  height="550" width="400px"></img>
     <img src="imagine4.jpg" height="550" width="400px"></img>
-
-
-  <button class="carousel__button next" id="next"></button>
-
-
+	<button class="carousel__button next" id="next"></button>
 	</div>
   );
 }
