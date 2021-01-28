@@ -4,12 +4,16 @@ import React from "react";
 import Navbar from "./components/Navbar";
 
 //pages
+
+import Login from './pages/Login';
+
 import Home from "./pages/Home";
 import Anime from "./pages/Anime";
 import Books from "./pages/Books";
 import Games from "./pages/Games";
 import Movies from "./pages/Movies";
 import AddNewList from "./pages/AddNewList";
+
 
 //backend imports
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -23,7 +27,9 @@ import {
 import { onError } from "@apollo/client/link/error";
 
 //styling
+
 import "./App.css";
+
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -51,6 +57,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/login"  component={Login} />
             <Route path="/anime" component={Anime} />
             <Route path="/books" component={Books} />
             <Route path="/games" component={Games} />

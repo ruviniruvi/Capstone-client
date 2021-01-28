@@ -117,6 +117,8 @@ button{
 .footer {
   display:flex;
   justify-content: flex-end;
+
+
 }
 
 
@@ -163,3 +165,4 @@ z-index: 1 !important;
   font-size: 3rem;
   /* background-color: black; */
 }
+
