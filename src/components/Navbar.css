@@ -1,6 +1,5 @@
 .navbar {
   background-color: black;
-  /*background-color: #6d4e80;*/
   height: 80px;
   display: flex;
   justify-content: start;
@@ -15,7 +14,6 @@
 
 .nav-menu {
   background-color: black;
-  /*background-color: #6d4e80;*/
   width: 250px;
   height: 100vh;
   display: flex;
@@ -32,7 +30,6 @@
 }
 
 .nav-text {
-  /*color: antiquewhite;*/
   display: flex;
   justify-content: start;
   align-items: center;

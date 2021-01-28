@@ -17,7 +17,7 @@ export default function Current(props) {
   if (current.length >= 1) {
     return (
       <div className="current-container">
-        <h1>Current</h1>
+        <h1 className="listing-header">Current</h1>
         <div className="display-list">
           {current.map((item) => (
             <Item item={item} />

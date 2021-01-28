@@ -10,16 +10,19 @@ export default class Review extends Component {
       id: this.props.item.id,
     };
   }
+
   handleReviewChange = (event, editor) => {
     this.setState({
       review: event.target.value,
     });
   };
+
   onSubmit = (event) => {
     event.preventDefault();
     console.log(this.state.review);
-      this.addReview();
+    this.addReview();
   };
+
   addReview = () => {
     axios.put(
       `https://capstone-ttp1.herokuapp.com/listings/${this.props.item.id}`,
@@ -29,6 +32,7 @@ export default class Review extends Component {
     );
     alert("Review updated successfully!");
   };
+
   render() {
     if (this.props.show) {
       return (
@@ -44,7 +48,7 @@ export default class Review extends Component {
             >
               {this.state.review}
             </textarea>
-            <input type="submit" name="submit"/>
+            <input type="submit" name="submit" />
           </form>
         </div>
       );

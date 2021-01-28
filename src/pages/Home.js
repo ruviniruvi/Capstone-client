@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import Header from "../components/Header";
-import PlaceToVisit from "../components/PlaceToVisit";
+import ShowCards from "../components/ShowCards";
 import Background from '../assets/bg.jpg'
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
     <div className={classes.root}>
       <CssBaseline />
       <Header />
-      <PlaceToVisit />
+      <ShowCards />
     </div>
   );
 }
@@ -21,43 +21,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     backgroundImage: `url(${Background})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
+    backgroundPositionX: '50%'
   },
 }));
-
-const tabItems = document.querySelectorAll(".tab-item");
-const tabContentItems = document.querySelectorAll(".tab-content-item");
-
-// Select tab content item
-function selectItem(e) {
-  // Remove all show and border classes
-  removeBorder();
-  removeShow();
-  // Add border to current tab item
-  this.classList.add("tab-border");
-  // Grab content item from DOM
-  const tabContentItem = document.querySelector(`#${this.id}-content`);
-  // Add show class
-  tabContentItem.classList.add("show");
-}
-
-// Remove bottom borders from all tab items
-function removeBorder() {
-  tabItems.forEach((item) => {
-    item.classList.remove("tab-border");
-  });
-}
-
-// Remove show class from all content items
-function removeShow() {
-  tabContentItems.forEach((item) => {
-    item.classList.remove("show");
-  });
-}
-
-// Listen for tab item click
-tabItems.forEach((item) => {
-  item.addEventListener("click", selectItem);
-});
 
 export default Home;

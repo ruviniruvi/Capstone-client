@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, IconButton, Toolbar, Collapse } from "@material-ui/core";
-import SortIcon from "@material-ui/icons/Sort";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link as Scroll } from "react-scroll";
-import Background from "../assets/bg.jpg";
 import '../App.css'
 
 export default function Header() {
@@ -17,14 +15,13 @@ export default function Header() {
     <div className={classes.root} id="header">
       <Collapse
         in={checked}
-        {...(checked ? { timeout: 1000 } : {})}
-        collapsedHeight={50}
+        {...(checked ? { timeout: 2000 } : {})}
+        collapsedHeight={0}
       >
-        {/* <img src={Background} className="background-home-image"></img> */}
-        <div className={classes.container}>
+        <div className={`${classes.container} home-header`}>
           <h1 className={classes.title}>
             Welcome to <br />
-            My<span className={classes.colorText}>Girumi App</span>
+            <span className={classes.colorText}>Girumi!</span>
           </h1>
           <Scroll to="Stuff to look" smooth={true}>
             <IconButton>

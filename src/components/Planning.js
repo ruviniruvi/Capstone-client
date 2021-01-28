@@ -15,7 +15,7 @@ export default function Planning(props) {
   if (planning.length >= 1) {
     return (
       <div className="planning-container">
-        <h1>Planning</h1>
+        <h1 className="listing-header">Planning</h1>
         <div className="display-list">
           {planning.map((item) => (
             <Item item={item} />

@@ -98,9 +98,8 @@ class AddNewList extends Component {
     //    `${this.state.title} ${this.state.description} ${this.state.images}  ${this.state.filter}   ${this.state.rating}  ${this.state.status} ${this.state.started_date} ${this.state.ended_date}  `
     //);
     event.preventDefault();
-    console.log(this.state.title);
-
     this.addList();
+    alert("Listing added!")
 
   };
 
@@ -119,38 +118,41 @@ class AddNewList extends Component {
       <div className="wrapper">
         <div className="form-wrapper">
           <div className="form-container">
-            <h1>Add New Favorite Anime , Book , Game or Movie To Your List!</h1>
+            <h1 className="form-header">Add New Favorite Anime , Book , Game or Movie To Your List!</h1>
             <form className="addlist-form" onSubmit={this.handleSubmit}>
               <div className="title">
-                <label>Title </label>
+                <label className="form-label">Title</label>
                 <input
                   type="text"
+                  className="input-style"
                   value={title}
                   placeholder="Enter title.."
                   onChange={this.handleTitleChange}
                 />
               </div>
               <div>
-                <label>Description </label>
+                <label className="form-label">Description </label>
                 <input
                   type="text"
+                  className="input-style"
                   value={description}
                   placeholder="Enter description.."
                   onChange={this.handleDescriptionChange}
                 />
               </div>
               <div>
-                <label>Image </label>
+                <label className="form-label">Image </label>
                 <input
                   type="text"
+                  className="input-style"
                   value={images}
                   placeholder="Enter image url.."
                   onChange={this.handleImageChange}
                 />
               </div>
               <div>
-                <label>Filter</label>
-                <select value={filter} onChange={this.handleFilterChange}>
+                <label className="form-label">Filter</label>
+                <select className="input-style" value={filter} onChange={this.handleFilterChange}>
                   <option value="4">Anime</option>
                   <option value="2">Books</option>
                   <option value="1">Games</option>
@@ -158,7 +160,7 @@ class AddNewList extends Component {
                 </select>
               </div>
               <div>
-                <label>Rating</label>
+                <label className="form-label">Rating</label>
                 <StarRatings
                   rating={this.state.rating}
                   starRatedColor="yellow"
@@ -168,30 +170,32 @@ class AddNewList extends Component {
                 />
               </div>
               <div>
-                <label>Status</label>
-                <select value={status} onChange={this.handleStatusChange}>
+                <label className="form-label">Status</label>
+                <select className="input-style" value={status} onChange={this.handleStatusChange}>
                   <option value="Planning">Planning</option>
                   <option value="Current">Currently</option>
                   <option value="Completed">Completed</option>
                 </select>
               </div>
               <div>
-                <label>Started Date </label>
+                <label className="form-label">Started Date </label>
                 <input
                   type="date"
+                  className="input-style"
                   value={started_date}
                   onChange={this.handleStartedDateChange}
                 />
               </div>
               <div>
-                <label>Ended Date </label>
+                <label className="form-label">Ended Date </label>
                 <input
                   type="date"
+                  className="input-style"
                   value={ended_date}
                   onChange={this.handleEndedDateChange}
                 />
               </div>
-              <input type="submit" value="Submit" />
+              <input type="submit" className="input-style" value="Submit" />
             </form>
           </div>
         </div>

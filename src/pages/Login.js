@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
-import "./Login.css";
+// import "./Login.css";
+import "./AddNewList.css";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
@@ -34,9 +35,10 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="form-wrapper">
+      <div className="wrapper">
+      <div className="login-wrapper">
         <form className="form">
-          <h1>Login</h1>
+          <h1 className="login-header">Login</h1>
           <div className="form-inputs">
             <label className="form-label">Username</label>
             <input
@@ -61,6 +63,7 @@ class Login extends Component {
             </Link>
           </div>
         </form>
+      </div>
       </div>
     );
   }
