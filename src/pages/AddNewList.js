@@ -113,7 +113,7 @@ class AddNewList extends Component {
         <div className="form-wrapper">
           <div className="form-container">
             <h1>Add New Favorite Anime , Book , Game or Movie To Your List!</h1>
-            <form onSubmit={this.handleSubmit}>
+            <form className="addlist-form" onSubmit={this.handleSubmit}>
               <div className="title">
                 <label>Title </label>
                 <input
