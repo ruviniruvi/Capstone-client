@@ -1,5 +1,25 @@
 # Entertainment Web Application
 
+## This is a full stack web development project using PERNS Stack.
+Our application is an entertainment media app which tracks entertainment media such as anime, books, games and movies what user is planning to watch,
+currently watching and have already watched.
+
+This is a user friendly application which allows user to add new entertainment media to the user’s list and edit and delete from the list.
+And also user can rate and set dates for the entertainment for future references.
+
+## Minimum Viable Product  (MVP)
+
+Application must be able to add listing into the lists that the user is tracking.
+
+Application must be able to edit the listing that is chosen.
+
+User can track their entertainment with multiple lists.
+
+Application must be able to display each list depending on what type of tracker it is.
+
+Application must be able to delete lists if possible.
+
+
 
 
 
