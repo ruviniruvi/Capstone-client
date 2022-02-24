@@ -39,7 +39,9 @@ Application must be able to delete lists if possible.
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories
+Here's a walkthrough of implemented user stories: 
+
+[![Capstone Demo](https://img.youtube.com/vi/GiselleDomingo/0.jpg)](https://www.youtube.com/watch?v=GiselleDomingo)
 
 
 
