@@ -25,6 +25,18 @@ Application must be able to delete lists if possible.
 
 ![welcome page](https://user-images.githubusercontent.com/63685062/155556348-22b1ae0c-8868-4c65-a804-02c189777229.png)
 
+![Navigation bar](https://user-images.githubusercontent.com/63685062/155557048-1bf6534a-8603-42b8-8364-ce4f0c53964d.png)
+
+![Features](https://user-images.githubusercontent.com/63685062/155557071-c3168401-c629-448f-a3ca-81be57426ea8.png)
+
+![Features 2](https://user-images.githubusercontent.com/63685062/155557093-cc6e6434-1c7c-4bfc-94bf-dbfd0a3b1286.png)
+
+![Features 3](https://user-images.githubusercontent.com/63685062/155557135-b13fc8f8-2602-49b4-8084-d8427fcb797a.png)
+
+![Feature 4](https://user-images.githubusercontent.com/63685062/155557158-74186f4f-e4fc-4f49-8e2f-731968d217e5.png)
+
+![Feature 5](https://user-images.githubusercontent.com/63685062/155557203-3a0d7609-db73-4a02-a432-2ec1e055e318.png)
+
 
 
 
