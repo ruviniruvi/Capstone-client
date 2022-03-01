@@ -65,7 +65,7 @@ Capstone Server: https://github.com/gisellen/capstone-server
 
 Here's a walkthrough of implemented user stories: 
 
-(https://www.youtube.com/watch?v=Q5Xp20Q1n_k&ab_channel=GiselleDomingo)
+https://www.youtube.com/watch?v=Q5Xp20Q1n_k&ab_channel=GiselleDomingo
 
 
 
