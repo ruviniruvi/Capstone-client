@@ -40,19 +40,15 @@ And also user can rate and set dates for the entertainment for future references
 
 <img src="https://user-images.githubusercontent.com/63685062/155557203-3a0d7609-db73-4a02-a432-2ec1e055e318.png" width="600" height="300" />
 
+## Resources
+
+Capstone Server: https://github.com/gisellen/capstone-server
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories: 
 
 (https://www.youtube.com/watch?v=Q5Xp20Q1n_k&ab_channel=GiselleDomingo)
-
-
-
-
-
-
-
-
 
 
 
