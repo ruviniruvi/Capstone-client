@@ -41,6 +41,23 @@ And also user can rate and set dates for the entertainment for future references
 <img src="https://user-images.githubusercontent.com/63685062/155557203-3a0d7609-db73-4a02-a432-2ec1e055e318.png" width="600" height="300" />
 
 ## Resources
+### Packages/ dependencies needed - Client
+- react-router-dom
+- react-icons —save
+- axios
+- @apollo/react-hooks
+- react-apollo
+- npm install react-datepicker --save
+- @apollo/client
+- react-bootstrap bootstrap
+- npm install --save react-star-ratings
+
+### Packages/ dependencies needed - Server
+
+- strapi
+- PostgreSQL 
+- pg-connection-string
+- graphql
 
 Capstone Server: https://github.com/gisellen/capstone-server
 
